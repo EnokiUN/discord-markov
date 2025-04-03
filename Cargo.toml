@@ -1,0 +1,18 @@
+[package]
+name = "bismillah"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.97"
+dotenvy = "0.15.7"
+env_logger = "0.11.7"
+log = "0.4.27"
+sqlx = { version = "0.8.3", features = ["sqlite", "runtime-tokio-rustls", "macros"] }
+tokio = { version = "1.44.1", features = ["rt-multi-thread", "macros"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["fmt", "tracing-log"] }
+twilight-cache-inmemory = "0.16.0"
+twilight-gateway = "0.16.0"
+twilight-http = "0.16.0"
+twilight-model = "0.16.0"
