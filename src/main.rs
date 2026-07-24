@@ -6,6 +6,7 @@ use twilight_gateway::{
 };
 use twilight_http::Client as HttpClient;
 use twilight_model::{
+    channel::message::AllowedMentions,
     gateway::{
         payload::outgoing::update_presence::UpdatePresencePayload,
         presence::{ActivityType, MinimalActivity, Status},
@@ -125,7 +126,7 @@ async fn handle_event(
                     http.create_message(msg.channel_id)
                         .reply(msg.id)
                         .content(&format!("{} {}", start, content))
-                        .allowed_mentions(None)
+                        .allowed_mentions(Some(&AllowedMentions::default()))
                         .await?;
                 }
             }
