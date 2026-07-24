@@ -125,6 +125,7 @@ async fn handle_event(
                     http.create_message(msg.channel_id)
                         .reply(msg.id)
                         .content(&format!("{} {}", start, content))
+                        .allowed_mentions(None)
                         .await?;
                 }
             }
